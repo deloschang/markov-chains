@@ -10,7 +10,7 @@ def markov_chain():
     # initialize markov dictionary
     markov_chain = {}
 
-    # 
+    # initialize with \n 
     first_word = "\n"
 
     print "Start reading the lines..."
