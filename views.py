@@ -1,3 +1,5 @@
+# Markov Chaining algorithm
+
 import random
 
 def markov_chain():
@@ -35,7 +37,12 @@ def construct_markov(markov_chain, word_count):
     first_word = choices
     
     for i in xrange(word_count):
-        new_word = random.choice(markov_chain[(first_word)])
+        try:
+            new_word = random.choice(markov_chain[(first_word)])
+        except KeyError: 
+            # reached the end! 
+            break
+
         generate = generate + " " + new_word
         first_word = new_word
         
